@@ -13,12 +13,12 @@ namespace v0615
         {
             InitializeComponent();
 
-            vx[0] = rand.Next(-10, 11);
-            vy[0] = rand.Next(-10, 11);
-            vx[1] = rand.Next(-10, 11);
-            vy[1] = rand.Next(-10, 11);
-            vx[2] = rand.Next(-10, 11);
-            vy[2] = rand.Next(-10, 11);
+            for (int i = 0; i < 3; i++) 
+            {
+                vx[i] = rand.Next(-10, 10);
+                vy[i] = rand.Next(-10, 10);
+            }
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
