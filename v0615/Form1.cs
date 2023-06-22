@@ -7,18 +7,26 @@ namespace v0615
         static Random rand = new Random();
         int[] vx = new int[3];
         int[] vy = new int[3];
+        Label[] labels = new Label[100];
 
 
         public Form1()
         {
             InitializeComponent();
 
-            for (int i = 0; i < 3; i++) 
+           
+
+            for (int i = 0; i < 3; i++)
             {
                 vx[i] = rand.Next(-10, 10);
                 vy[i] = rand.Next(-10, 10);
+
+                labels[i] = new Label();
+                labels[i].Text = "ž";
+                labels[i].AutoSize = true;
+                Controls.Add(labels[i]);
             }
-           
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -83,8 +91,16 @@ namespace v0615
         private void button1_Click(object sender, EventArgs e)
         {
             int a = 0;
-            for (; a < 10; a++) 
+            for (; a < 10; a++)
             {
+                if (a == 2)
+                {
+                    continue;
+                }
+                if (a == 5)
+                {
+                    break;
+                }
                 MessageBox.Show($"{a}");
             }
 
